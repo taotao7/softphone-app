@@ -1,12 +1,8 @@
 name: Release
 on:
-  workflow_call:
-    inputs:
-      dry-run:
-        description: "build app"
-        default: false
-        required: false
-        type: boolean
+  push:
+    tags:
+      - "v*.*.*"
 
 concurrency:
   group: release-${{ github.ref }}
