@@ -6,10 +6,7 @@
   "description": "softphone",
   "license": "MIT",
   "scripts": {
-    "start": "electron main.js",
-    "build:win64": "electron-builder --win --x64",
-    "build:win32": "electron-builder --win --x32",
-    "build:mac": "electron-builder --mac"
+    "start": "electron main.js"
   },
   "devDependencies": {
     "electron": "^29.1.6",

@@ -35,8 +35,6 @@ jobs:
         env:
           PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
 
-      - run: npm run build:win64
-
       - name: Compile artifacts ${{ inputs.dry-run && '' || 'and upload them to github release' }}
         uses: nick-fields/retry@v3
         with:
@@ -45,6 +43,6 @@ jobs:
           retry_wait_seconds: 15
           retry_on: error
           shell: "bash"
-          command: ./node_modules/.bin/electron-builder --publish ${{ inputs.dry-run && 'never' || 'always' }}
+          command: ./node_modules/.bin/electron-builder --publish 'always'
         env:
           GH_TOKEN: ${{ secrets.github_token }}
