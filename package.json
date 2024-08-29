@@ -12,6 +12,9 @@
     "electron": "^29.1.6",
     "electron-builder": "^24.13.3"
   },
+  "repository": {
+    "url": "https://github.com/taotao7/softphone-app"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
@@ -33,14 +36,20 @@
         "dmg"
       ],
       "icon": "icons/logo.png",
-      "artifactName": "${productName}-${platform}-${version}.${ext}"
+      "artifactName": "${productName}-${platform}-${version}.${ext}",
+      "publish": [
+        "github"
+      ]
     },
     "win": {
       "target": [
         "nsis"
       ],
       "icon": "icons/logo.png",
-      "artifactName": "${productName}-${platform}-${version}.${ext}"
+      "artifactName": "${productName}-${platform}-${version}.${ext}",
+      "publish": [
+        "github"
+      ]
     },
     "asarUnpack": [
       "**/node_modules/axios/**/*",
