@@ -45,6 +45,6 @@ jobs:
           retry_wait_seconds: 15
           retry_on: error
           shell: "bash"
-          command: ./node_modules/.bin/electron-builder --config electron-builder.yml --publish ${{ inputs.dry-run && 'never' || 'always' }}
+          command: ./node_modules/.bin/electron-builder --publish ${{ inputs.dry-run && 'never' || 'always' }}
         env:
           GH_TOKEN: ${{ secrets.github_token }}
